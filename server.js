@@ -30,7 +30,7 @@ async function topup(c, p){
             response = {
                 Status: 200,
                 Message: "กดลิ้งค์สำเร็จ",
-                Amount: PhFunc.data.voucher.amount_baht
+                Amount: Tmn.data.voucher.amount_baht
             };
             return response;
         case "CANNOT_GET_OWN_VOUCHER":
