@@ -4,6 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+var base64 = require('base-64');
 
 const PhFunc = require('./GetApi.js');
 
@@ -133,7 +134,7 @@ app.post('/api/phfunc', (req, res) => {
 });
 
 app.get('/encode/:p', (req, res)=>{
-    const encode = btoa(req.params.p);
+    const encode = base64.encode(req.params.p);
     const responce = {
         "Encode": encode
     };
