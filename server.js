@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 var base64 = require('base-64');
+const fetch = require('cross-fetch');
 
 const PhFunc = require('./GetApi.js');
 
@@ -85,7 +86,7 @@ app.post('/api/phfunc', (req, res) => {
     const Api_Key = req.query.Api_Key;
     const Code = req.query.Code;
   
-    fetch("https://sheet.best/api/sheets/4d869100-f146-4811-9aa8-fac4d7b29e21")
+    fetch("https://sheet.best/api/sheets/4d869100-f146-811-9aa8-fac4d7b29e21")
     .then((response) => response.json())
     .then((data) => {
         // กำหนดเงื่อนไขในการกรองข้อมูล
